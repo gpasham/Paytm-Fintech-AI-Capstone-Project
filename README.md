@@ -1,17 +1,5 @@
 # Paytm Investment Advisory & Risk Analysis Tasks
 
-## Overview
-
-This repository contains the completed Python tasks for the hypothetical Paytm investment-advisory workflow:
-
-- Stock universe and market assumptions
-- Investor profiles
-- Advisory-agent portfolio construction and escalation
-- Disclosure-risk signal extraction
-- Multi-agent stock debate
-- DCF valuation and sensitivity analysis
-- Blockchain / crypto risk note
-
 The implementations use deterministic mock logic for the recorded baseline runs.
 
 ## Recorded Run Configuration
@@ -50,8 +38,6 @@ blockchain_risk_note.md
 
 ## Requirements
 
-- Python 3.9+ recommended
-- No external packages are required for the baseline implementations.
 - Run the scripts from the directory containing the files.
 
 ## How to Run
@@ -122,18 +108,6 @@ The baseline output uses the actual stock-universe values for beta, analyst expe
 python dcf_calculator.py
 ```
 
-The script calculates:
-
-- FCFF
-- Cost of equity using CAPM
-- After-tax cost of debt
-- WACC
-- Five-year DCF valuation
-- Terminal value
-- WACC / terminal-growth sensitivity
-- Sensitivity sanity check
-- EV/EBITDA cross-check
-
 The recorded output is stored in:
 
 ```text
@@ -153,32 +127,6 @@ It covers:
 - Survivorship bias and transaction costs
 - T.A.N.G. social-engineering risks
 - Real-time bank-side defenses
-
-## Optional LLM Extension
-
-Some scripts contain an optional extension path controlled by `MOCK_LLM`.
-
-For example:
-
-```bash
-MOCK_LLM=0 python advisory_agent.py
-```
-
-or:
-
-```bash
-MOCK_LLM=0 python extract_disclosure.py
-```
-
-The optional path is intended to support richer LLM-generated narratives or extraction while retaining validation/fallback behavior.
-
-**Important:** the recorded runs documented above were performed in mock mode. Therefore, the baseline results do not depend on paid API usage.
-
-### Free-tier usage notes
-
-No external LLM API was used for the recorded baseline runs, so there was **no free-tier API consumption associated with those transcripts**.
-
-If the optional `MOCK_LLM=0` extension is attempted, API availability, model access, rate limits, token limits, and any free-tier allowance depend on the provider/account configuration. The code should be treated as an optional integration rather than a requirement for reproducing the recorded baseline results.
 
 ## Reproducing the Baseline
 
@@ -205,9 +153,3 @@ The project separates:
 **Think → Act → Observe → Decide**
 
 The advisory workflow first determines the portfolio from the investor profile, then retrieves local market inputs, calculates portfolio-level risk/return, and finally decides whether to finalize or escalate.
-
-The system is intentionally conservative about escalation: portfolio volatility above 20% is routed to a human advisor rather than being presented as an automated recommendation.
-
-## Disclaimer
-
-All securities, investor profiles, valuations, and financial assumptions in this project are hypothetical and intended for educational / demonstration purposes only. They are not investment advice or recommendations to buy or sell any security or cryptocurrency.
