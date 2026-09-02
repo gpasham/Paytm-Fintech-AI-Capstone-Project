@@ -8,12 +8,6 @@ This branch builds a small credit-risk and transaction-anomaly detection pipelin
 
 The contamination rate was set to **15 / 265 = 0.0566 (5.66%)**, matching the injected anomaly proportion. Isolation Forest flagged **15 transactions** as anomalous in total, of which **11 of the 15 seeded anomalies were detected**, giving a seeded-anomaly recall of **73.33%**. This is a simple ground-truth recall check because the anomalies were deliberately injected for this exercise.
 
-## Responsible AI & Governance Note
-
-Even though this dataset contains no explicit gender or location field, variables such as `employment_type`, `monthly_income_inr`, and `credit_bureau_score` could act as correlated proxies for protected attributes in a real lending deployment. Employment type can reflect occupational and socioeconomic patterns that differ across demographic groups; income can be correlated with access to opportunity and other demographic factors; and bureau score can encode historical differences in access to formal credit. A model can therefore create disparate outcomes without ever directly using a protected attribute.
-
-Before production deployment, I would recommend a **maker-checker human-in-the-loop review for declined thin-file applicants**, rather than allowing an automated decline to be the final decision. The checker should review the model decision, the applicant's alternate-data evidence, and whether the decision appears consistent with documented credit policy. In parallel, the lender should run periodic fairness testing across legally permissible protected-group audits, monitor approval/decline and error-rate disparities, document feature lineage and proxy-risk assessments, and maintain an appeal/review pathway. Thin-file status should not automatically translate into adverse treatment when credible alternate-data signals are available. These controls help ensure that the model is used as a decision-support system with accountability, rather than as an unreviewed black-box gatekeeper.
-
 ## Final Model Comparison
 
 | Model | Accuracy | Precision | Recall | F1 | ROC AUC / Anomaly Recall |
