@@ -1,0 +1,56 @@
+[
+  {
+    "snippet": "doc_01: Assuming input costs remain stable through the next two quarters, we expect margins to hold at current levels.",
+    "output": {
+      "risk_flags": [],
+      "hedging_detected": true,
+      "sentiment": "cautious"
+    }
+  },
+  {
+    "snippet": "doc_02: The company faces an ongoing litigation matter related to a former vendor contract; management believes the exposure is not material.",
+    "output": {
+      "risk_flags": [
+        "litigation"
+      ],
+      "hedging_detected": false,
+      "sentiment": "neutral"
+    }
+  },
+  {
+    "snippet": "doc_03: Our top three customers together account for approximately 42 percent of total revenue this year.",
+    "output": {
+      "risk_flags": [
+        "customer concentration"
+      ],
+      "hedging_detected": false,
+      "sentiment": "neutral"
+    }
+  },
+  {
+    "snippet": "doc_04: We remain cautiously optimistic about demand recovery, though visibility beyond the next quarter is limited given macro uncertainty.",
+    "output": {
+      "risk_flags": [],
+      "hedging_detected": true,
+      "sentiment": "cautious"
+    }
+  },
+  {
+    "snippet": "doc_05: The board is confident in the long-term strategy and has approved an expanded capital expenditure plan for the coming year.",
+    "output": {
+      "risk_flags": [],
+      "hedging_detected": false,
+      "sentiment": "confident"
+    }
+  },
+  {
+    "snippet": "doc_06: A recent regulatory notice has been received regarding data-localization compliance; the company is in active dialogue with the regulator.",
+    "output": {
+      "risk_flags": [
+        "regulatory"
+      ],
+      "hedging_detected": false,
+      "sentiment": "neutral"
+    }
+  }
+]
